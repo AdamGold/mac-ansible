@@ -1,0 +1,15 @@
+*~
+build/
+dist/
+*.pyc
+.DS_Store
+.history/
+.vscode/settings.json
+.vscode/.react/
+venv/
+.eggs/
+*.egg-info
+.mypy_cache/
+*.crt
+*.key
+.python-version

@@ -1,0 +1,28 @@
+- name: Mac Apple Store | Ensure MAS is installed
+  homebrew:
+      name: mas
+      state: present
+
+- name: Mac Apple Store | Signing out
+  shell: "mas signout"
+  register: mac_account
+  when: app_store_email is defined and app_store_password is defined and app_store_email != '' and app_store_password != ''
+
+- name: Mac Apple Store | Signing in.
+  shell: 'mas signin "{{ app_store_email }}" "{{ app_store_password }}"'
+  register: result
+  when: app_store_email is defined and app_store_password is defined and app_store_email != '' and app_store_password != '' and mac_account is defined
+
+- name: Mac Apple Store | Install apps.
+  shell: mas list | grep "{{ item.id }}" || mas install "{{ item.id }}"
+  with_items: "{{ mac_store_apps }}"
+  register: result
+  changed_when: result.stdout.find('Installed') != -1
+  when: app_store_email is defined and app_store_password is defined and app_store_email != '' and app_store_password != '' and mac_account is defined
+
+- name: Mac Apple Store | Upgrade apps.
+  shell: mas list | grep "{{ item.id }}" || mas upgrade "{{ item.id }}"
+  with_items: "{{ mac_store_apps }}"
+  register: result
+  changed_when: result.stdout.find('Installed') != -1
+  when: app_store_email is defined and app_store_password is defined and app_store_email != '' and app_store_password != '' and mac_account is defined

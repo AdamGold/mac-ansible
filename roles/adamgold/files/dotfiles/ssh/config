@@ -1,0 +1,18 @@
+Compression yes
+ServerAliveInterval 20
+TCPKeepAlive yes
+ControlMaster auto
+ControlPath /tmp/%r@%h:%p
+ControlPersist yes
+StrictHostKeyChecking no
+
+Host *
+  UseKeychain yes
+
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+
+Host bitbucket.org
+  Hostname altssh.bitbucket.org
+  Port 443

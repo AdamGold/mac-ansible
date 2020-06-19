@@ -1,0 +1,25 @@
+// Place your key bindings in this file to override the defaults
+[
+	// Toggle between terminal and editor focus
+	{
+		"key": "shift+cmd+1",
+		"command": "workbench.action.terminal.focus"
+	},
+	{
+		"key": "shift+cmd+1",
+		"command": "workbench.action.focusActiveEditorGroup",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "cmd+shift+k",
+		"command": "workbench.action.terminal.focusNext"
+	},
+	{
+		"key": "cmd+shift+j",
+		"command": "workbench.action.terminal.focusPrevious"
+	},
+	{
+		"key": "alt+",
+		"command": "workbench.action.toggleMultiCursorModifier"
+	}
+]

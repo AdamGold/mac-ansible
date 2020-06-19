@@ -1,0 +1,22 @@
+- name: dotfiles dirs
+  file:
+      path: "~/.{{ item }}"
+      state: directory
+  loop:
+      - config
+      - config/karabiner
+
+- name: dotfiles files
+  file:
+      src: "{{ ansible_env.PWD }}/roles/adamgold/files/dotfiles/{{ item }}"
+      path: "~/.{{ item }}"
+      state: link
+  loop:
+      - config/karabiner/karabiner.json
+      - gitconfig
+      - gitignore_global
+      - ssh/config
+      - ansible.cfg
+      - zshrc
+      - vimrc
+      - p10k.zsh

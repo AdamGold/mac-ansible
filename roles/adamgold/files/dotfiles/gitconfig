@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Adam Goldschmidt
+	email = adamgold7@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+
+[alias]
+	ch = checkout
+	br = branch
+	cm = commit
+	st = status
+	p = push
