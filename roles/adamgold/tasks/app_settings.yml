@@ -34,10 +34,11 @@
       value: "{{ ansible_env.PWD }}/roles/adamgold/files"
 
 - name: vscode settings
-  file:
+  copy:
       src: "{{ ansible_env.PWD }}/roles/adamgold/files/vscode/{{ item }}"
-      path: "/Users/adamgold/Library/Application Support/Code/User/{{ item }}"
-      state: link
+      dest: "/Users/adamgold/Library/Application Support/Code/User/{{ item }}"
+      owner: adamgold
+      mode: preserve
   loop:
       - settings.json
       - keybindings.json

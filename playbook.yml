@@ -10,11 +10,11 @@
   connection: local
   vars_prompt:
       - name: app_store_email
-        prompt: Mac Apple Store ID
+        prompt: Apple ID
         private: no
         when: app_store_email is undefined
       - name: app_store_password
-        prompt: Mac Apple Store Password
+        prompt: Apple ID Password
         private: yes
         when: app_store_password is undefined
   roles:

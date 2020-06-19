@@ -40,7 +40,24 @@ homebrew_cask_packages:
     - karabiner-elements
     - visual-studio-code
     - virtualbox
+    - toggl
     - pock
+
+mac_store_apps:
+    - name: Unsplash Wallpapers
+      id: 1284863847
+    - name: Keymou
+      id: 449863619
+    - name: Amphetamine
+      id: 937984704
+    - name: Snappy
+      id: 512617038
+    - name: 1Password
+      id: 443987910
+    - name: feedly
+      id: 865500966
+    - name: Magnet
+      id: 441258766
 
 pyenv_python_versions:
     # In precedence order
