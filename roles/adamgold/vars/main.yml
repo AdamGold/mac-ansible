@@ -26,6 +26,8 @@ homebrew_packages:
     - zlib
     - zsh
     - zsh-completions
+    - jq
+    - kube-ps1
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_packages:
