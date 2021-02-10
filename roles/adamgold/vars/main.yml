@@ -17,7 +17,6 @@ homebrew_packages:
     - node
     - mas
     - pango
-    - pyenv-virtualenv
     - redis
     - tig
     - tmux
@@ -28,6 +27,7 @@ homebrew_packages:
     - zsh-completions
     - jq
     - kube-ps1
+    - pyenv-virtualenvwrapper
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_packages:
@@ -79,6 +79,7 @@ pipx_packages:
     - poetry
     - requests
     - pylint
+    - virtualenvwrapper
 
 dockitems_to_remove:
     - Launchpad

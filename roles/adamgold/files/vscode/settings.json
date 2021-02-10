@@ -16,8 +16,6 @@
 	"editor.lineNumbers": "relative",
 	"terminal.integrated.shell.osx": "zsh",
 	"terminal.integrated.rendererType": "dom",
-	"sync.gist": "2fee66dfecdcefaeaa81b9c952bb0f91",
-	"sync.autoUpload": true,
 	"window.zoomLevel": 0,
 	"editor.fontLigatures": true,
 	"workbench.startupEditor": "none",
@@ -39,10 +37,20 @@
 	"python.linting.mypyEnabled": true,
 	"editor.formatOnSave": true,
 	"python.formatting.provider": "black",
-	"python.linting.mypyPath": "/Users/adamgold/.local/pipx/venvs/mypy/bin/mypy",
-	"python.linting.banditPath": "/Users/adamgold/.local/pipx/venvs/bandit/bin/bandit",
-	"python.formatting.blackPath": "/Users/adamgold/.local/pipx/venvs/black/bin/black",
-	"python.venvPath": "/Users/adamgold/.pyenv/versions/",
-	"python.linting.flake8Path": "/Users/adamgold/.local/pipx/venvs/flake8/bin/flake8",
-	"terminal.integrated.fontFamily": "MesloLGS NF"
+	"terminal.integrated.fontFamily": "MesloLGS NF",
+	"python.venvPath": "/Users/adam-snyk/.venvs",
+	"python.linting.flake8Path": "/Users/adam-snyk/.local/bin/flake8",
+	"python.pythonPath": "/Users/adam-snyk/.pyenv/versions/3.8.2/bin/python3.8",
+	"python.venvFolders": [
+		"/Users/adam-snyk/.local/share/virtualenvs",
+		"/Users/adam-snyk/.venvs"
+	],
+	"tabnine.experimentalAutoImports": true,
+	"python.formatting.blackPath": "/Users/adam-snyk/.local/bin/black",
+	"python.linting.banditPath": "/Users/adam-snyk/.local/bin/bandit",
+	"python.linting.mypyPath": "/Users/adam-snyk/.local/bin/mypy",
+	"files.insertFinalNewline": true,
+	"python.terminal.activateEnvironment": false,
+	"sync.gist": "2fee66dfecdcefaeaa81b9c952bb0f91",
+	"sync.autoUpload": true
 }

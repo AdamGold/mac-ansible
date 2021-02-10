@@ -1,33 +1,33 @@
 - name: iTerm custom settings file
-  osx_defaults:
+  community.general.osx_defaults:
       domain: com.googlecode.iterm2
       key: PrefsCustomFolder
       type: string
       value: "{{ ansible_env.PWD }}/roles/adamgold/files"
 
 - name: HyperSwitch custom settings file
-  osx_defaults:
+  community.general.osx_defaults:
       domain: com.bahoom.HyperSwitch
       key: PrefsCustomFolder
       type: string
       value: "{{ ansible_env.PWD }}/roles/adamgold/files"
 
 - name: Keymo custom settings file
-  osx_defaults:
+  community.general.osx_defaults:
       domain: com.manytricks.Keymo
       key: PrefsCustomFolder
       type: string
       value: "{{ ansible_env.PWD }}/roles/adamgold/files"
 
 - name: Pock custom settings file
-  osx_defaults:
+  community.general.osx_defaults:
       domain: com.pigigaldi.pock
       key: PrefsCustomFolder
       type: string
       value: "{{ ansible_env.PWD }}/roles/adamgold/files"
 
 - name: Notable custom settings file
-  osx_defaults:
+  community.general.osx_defaults:
       domain: com.fabiospampinato.notable
       key: PrefsCustomFolder
       type: string

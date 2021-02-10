@@ -8,7 +8,8 @@ and re-install with less effort.
 1. Install [homebrew](http://brew.sh/) with the command from the site
 2. `brew install pipx`
 3. `pipx install ansible`
-4. Then `ansible-playbook playbook.yml`
+4. `ansible-galaxy collection install community.general`
+5. `ansible-playbook playbook.yml`
 
 ## What's left to do?
 

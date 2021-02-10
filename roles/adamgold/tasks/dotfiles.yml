@@ -19,4 +19,4 @@
       - ansible.cfg
       - zshrc
       - vimrc
-      - p10k.zsh
+      - zpreztorc

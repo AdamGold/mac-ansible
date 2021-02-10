@@ -94,6 +94,29 @@
       dest=~/.oh-my-zsh
   when: not stat_oh_my_zsh_result.stat.exists
 
+- name: Check if prezto exists
+  stat:
+      path: ~/.zpreztorc
+  register: stat_prezto_result
+
+- name: Cloning prezto
+  git: repo=https://github.com/sorin-ionescu/prezto
+      dest=~/.zprezto
+  when: not stat_prezto_result.stat.exists
+
+- name: Installing prezto
+  ansible.builtin.shell: |
+    setopt EXTENDED_GLOB
+    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+      if [[ $rcfile != "$HOME/.zprezto/runcoms/zshrc" ]]; then ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; fi
+    done
+  when: not stat_prezto_result.stat.exists
+
+- name: Cloning prezto config
+  git: repo=https://github.com/belak/prezto-contrib
+      dest=~/.zprezto/contrib
+  when: not stat_prezto_result.stat.exists
+
 - name: Creating new ~/.zshrc
   copy: src=~/.oh-my-zsh/templates/zshrc.zsh-template
       dest=~/.zshrc
