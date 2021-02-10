@@ -105,11 +105,11 @@
   when: not stat_prezto_result.stat.exists
 
 - name: Installing prezto
-  ansible.builtin.shell: |
-    setopt EXTENDED_GLOB
-    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-      if [[ $rcfile != "$HOME/.zprezto/runcoms/zshrc" ]]; then ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; fi
-    done
+  shell: |
+      setopt EXTENDED_GLOB
+      for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+        if [[ $rcfile != "$HOME/.zprezto/runcoms/zshrc" ]]; then ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; fi
+      done
   when: not stat_prezto_result.stat.exists
 
 - name: Cloning prezto config

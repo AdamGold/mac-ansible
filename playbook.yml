@@ -12,8 +12,10 @@
       - name: app_store_email
         prompt: Apple ID
         private: no
+        when: app_store_email is undefined
       - name: app_store_password
         prompt: Apple ID Password
         private: yes
+        when: app_store_email is undefined
   roles:
       - adamgold
