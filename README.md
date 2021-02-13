@@ -30,6 +30,8 @@ and re-install with less effort.
 -   [fkill](https://github.com/SamVerschueren/alfred-fkill#readme)
 -   [git repos](https://github.com/deanishe/alfred-repos)
 -   [appcleaner](https://github.com/asendra/mac-app-configs/blob/master/alfred-workflows/alfred-appcleaner.alfredworkflow)
+-   [New iTerm window](https://github.com/miromannino/alfred-new-terminal-window)
+-   [New Chrome window](https://github.com/caiogondim/alfred-chrome-window-workflow)
 
 4. Set `gitrepos` extension settings to (`alfred/workflow data/git-repos/settings.json`):
 

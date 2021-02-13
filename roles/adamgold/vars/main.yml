@@ -19,7 +19,6 @@ homebrew_packages:
     - pango
     - redis
     - tig
-    - tmux
     - webp
     - wget
     - zlib
