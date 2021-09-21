@@ -22,7 +22,7 @@ and re-install with less effort.
 -   [Monokay Dark Soda Modified](https://marketplace.visualstudio.com/items?itemName=DengSir.monokai-dark-soda-modified)
 -   [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
 
-2. Set Alfred directory to Dropbox
+2. Set Alfred directory to the cloud storage
 
 3. Install Alfred Workflows:
 
