@@ -27,6 +27,7 @@ homebrew_packages:
     - jq
     - kube-ps1
     - pyenv-virtualenvwrapper
+    - minikube
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_packages:
@@ -40,7 +41,6 @@ homebrew_cask_packages:
     - notable
     - karabiner-elements
     - visual-studio-code
-    - virtualbox
     - toggl
     - pock
 
@@ -72,7 +72,6 @@ pipx_packages:
     - bandit
     - black
     - flake8
-    - httpie
     - ipython
     - mypy
     - poetry
@@ -107,9 +106,6 @@ dockitems_to_persist:
     - name: Visual Studio Code
       path: /Applications/Visual Studio Code.app
       pos: 3
-    - name: VirtualBox
-      path: /Applications/VirtualBox.app
-      pos: 4
     - name: Spotify
       path: /Applications/Spotify.app
-      pos: 5
+      pos: 4

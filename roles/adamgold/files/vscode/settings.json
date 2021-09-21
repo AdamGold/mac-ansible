@@ -16,7 +16,6 @@
 	"editor.lineNumbers": "relative",
 	"terminal.integrated.shell.osx": "zsh",
 	"terminal.integrated.rendererType": "dom",
-	"window.zoomLevel": 0,
 	"editor.fontLigatures": true,
 	"workbench.startupEditor": "none",
 	"editor.multiCursorModifier": "ctrlCmd",
@@ -38,19 +37,32 @@
 	"editor.formatOnSave": true,
 	"python.formatting.provider": "black",
 	"terminal.integrated.fontFamily": "MesloLGS NF",
-	"python.venvPath": "/Users/adam-snyk/.venvs",
-	"python.linting.flake8Path": "/Users/adam-snyk/.local/bin/flake8",
-	"python.pythonPath": "/Users/adam-snyk/.pyenv/versions/3.8.2/bin/python3.8",
+	"python.venvPath": "~/.local/share/virtualenvs",
+	"python.pythonPath": "~/.pyenv/versions/3.8.2/bin/python3.8",
 	"python.venvFolders": [
-		"/Users/adam-snyk/.local/share/virtualenvs",
-		"/Users/adam-snyk/.venvs"
+		"~/.local/share/virtualenvs"
 	],
 	"tabnine.experimentalAutoImports": true,
-	"python.formatting.blackPath": "/Users/adam-snyk/.local/bin/black",
-	"python.linting.banditPath": "/Users/adam-snyk/.local/bin/bandit",
-	"python.linting.mypyPath": "/Users/adam-snyk/.local/bin/mypy",
+	"python.formatting.blackPath": "~/.local/bin/black",
+	"python.linting.banditPath": "~/.local/bin/bandit",
+	"python.linting.mypyPath": "~/.local/bin/mypy",
 	"files.insertFinalNewline": true,
 	"python.terminal.activateEnvironment": false,
-	"sync.gist": "2fee66dfecdcefaeaa81b9c952bb0f91",
-	"sync.autoUpload": true
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"terminal.integrated.tabs.enabled": false,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"terminal.integrated.scrollback": 3000,
+	"python.defaultInterpreterPath": "~/.pyenv/versions/3.8.2/bin/python3.8"
 }

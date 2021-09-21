@@ -24,6 +24,10 @@ gtd() {
   cd $1
 }
 
-source <(kubectl completion zsh)
-alias k=kubectl
-complete -F __start_kubectl k
+kube() {
+	source <(kubectl completion zsh)
+	alias k=kubectl
+	complete -F __start_kubectl k
+}
+
+alias v=mkvirtualenv
