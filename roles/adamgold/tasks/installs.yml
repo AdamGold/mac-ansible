@@ -60,10 +60,8 @@
     - pyenv
 
 - name: Install pipx packages
-  pip:
-    name: "{{ pipx_packages }}"
-    state: latest
-    executable: "/Users/adamgold/.local/bin/pipx"
+  command: "pipx install {{ item }}"
+  loop: "{{ pipx_packages }}"
   tags:
     - python
     - pipx
