@@ -12,20 +12,12 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-Plugin 'tpope/vim-fugitive'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-airline/vim-airline'
 Plugin 'sjl/badwolf'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'sjl/gundo.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 colorscheme badwolf
-
 let python_highlight_all=1
 syntax enable           " enable syntax processing
 
