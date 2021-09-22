@@ -2,32 +2,21 @@
   command: brew tap {{ item }}
   loop: "{{ homebrew_taps }}"
   tags:
-      - brew
-
-- name: Update homebrew
-  homebrew:
-      name: git
-      state: latest
-      update_homebrew: true
-  tags:
-      - brew
+    - brew
 
 - name: Install homebrew packages
   homebrew:
-      name: "{{ item }}"
-      state: latest
+    name: "{{ item }}"
+    state: latest
   loop: "{{ homebrew_packages }}"
   tags:
-      - brew
+    - brew
 
 - name: Install homebrew cask packages
-  homebrew_cask:
-      name: "{{ item }}"
-      state: installed
-      install_options: "appdir={{ homebrew_cask_appdir }}"
+  command: "brew install --cask {{ item }} --appdir {{ homebrew_cask_appdir }}"
   loop: "{{ homebrew_cask_packages }}"
   tags:
-      - brew
+    - brew
 
 - name: homebrew cleanup
   command: brew cleanup
@@ -37,18 +26,18 @@
   command: pyenv install {{ item }}
   register: pyenv_install_result
   failed_when: >
-      pyenv_install_result.rc != 0 and
-      pyenv_install_result.stderr_lines != ["pyenv: /Users/adamgold/.pyenv/versions/" + item + " already exists"]
+    pyenv_install_result.rc != 0 and
+    pyenv_install_result.stderr_lines != ["pyenv: /Users/adamgold/.pyenv/versions/" + item + " already exists"]
   loop: "{{ pyenv_python_versions }}"
   tags:
-      - python
-      - pyenv
+    - python
+    - pyenv
 
 - name: python versions active
   command: pyenv global {{ pyenv_python_versions|join(" ") }}
   tags:
-      - python
-      - pyenv
+    - python
+    - pyenv
 
 - name: python versions shims rehashed
   # Needs running after every update of pyenv, at least, to fix the pyenv shims
@@ -56,68 +45,68 @@
 
 - name: python versions latest Cython, pip, and pip-tools
   pip:
-      name:
-          - Cython
-          - pip
-          - pip-tools
-      state: latest
-      executable: '~/.pyenv/versions/{{ item }}/bin/pip{% if "pypy3" in item %}3{% endif %}'
+    name:
+      - Cython
+      - pip
+      - pip-tools
+    state: latest
+    executable: '~/.pyenv/versions/{{ item }}/bin/pip{% if "pypy3" in item %}3{% endif %}'
   environment:
-      PIP_REQUIRE_VIRTUALENV: ""
+    PIP_REQUIRE_VIRTUALENV: ""
   loop: "{{ pyenv_python_versions }}"
   tags:
-      - python
-      - pip
-      - pyenv
+    - python
+    - pip
+    - pyenv
 
 - name: Install pipx packages
   pip:
-      name: "{{ pipx_packages }}"
-      state: latest
-      executable: "/Users/adamgold/.local/bin/pipx"
+    name: "{{ pipx_packages }}"
+    state: latest
+    executable: "/Users/adamgold/.local/bin/pipx"
   tags:
-      - python
-      - pipx
+    - python
+    - pipx
 
 - name: Check if .zshrc exists
   stat:
-      path: ~/.zshrc
+    path: ~/.zshrc
   register: stat_rc_result
 
 - name: Check if .oh-my-zsh exists
   stat:
-      path: ~/.oh-my-zsh
+    path: ~/.oh-my-zsh
   register: stat_oh_my_zsh_result
 
 - name: Cloning oh-my-zsh
   git: repo=https://github.com/robbyrussell/oh-my-zsh
-      dest=~/.oh-my-zsh
+    dest=~/.oh-my-zsh
   when: not stat_oh_my_zsh_result.stat.exists
 
 - name: Check if prezto exists
   stat:
-      path: ~/.zpreztorc
+    path: ~/.zpreztorc
   register: stat_prezto_result
 
 - name: Cloning prezto
   git: repo=https://github.com/sorin-ionescu/prezto
-      dest=~/.zprezto
+    dest=~/.zprezto
   when: not stat_prezto_result.stat.exists
 
 - name: Installing prezto
   shell: |
-      setopt EXTENDED_GLOB
-      for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-        if [[ $rcfile != "$HOME/.zprezto/runcoms/zshrc" ]]; then ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; fi
-      done
+    setopt EXTENDED_GLOB
+    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+      if [[ $rcfile != "$HOME/.zprezto/runcoms/zshrc" ]]; then ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; fi
+    done
   when: not stat_prezto_result.stat.exists
 
 - name: Cloning prezto config
   git: repo=https://github.com/belak/prezto-contrib
-      dest=~/.zprezto/contrib
+    dest=~/.zprezto/contrib
   when: not stat_prezto_result.stat.exists
 
 - name: Creating new ~/.zshrc
   copy: src=~/.oh-my-zsh/templates/zshrc.zsh-template
-      dest=~/.zshrc
+    dest=~/.zshrc
   when: not stat_rc_result.stat.exists
