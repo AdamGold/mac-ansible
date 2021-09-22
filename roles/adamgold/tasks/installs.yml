@@ -62,6 +62,7 @@
 - name: Install pipx packages
   command: "pipx install {{ item }}"
   loop: "{{ pipx_packages }}"
+  ignore_errors: yes
   tags:
     - python
     - pipx
