@@ -36,8 +36,8 @@
 - name: vscode settings
   copy:
       src: "{{ ansible_env.PWD }}/roles/adamgold/files/vscode/{{ item }}"
-      dest: "/Users/adamgold/Library/Application Support/Code/User/{{ item }}"
-      owner: adamgold
+      dest: "/Users/{{ ansible_user_id }}/Library/Application Support/Code/User/{{ item }}"
+      owner: "{{ ansible_user_id }}"
       mode: preserve
   loop:
       - settings.json
