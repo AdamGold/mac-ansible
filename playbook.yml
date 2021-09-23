@@ -2,20 +2,11 @@
 - hosts: localhost
   connection: local
   tasks:
-      - debug:
-            msg: Check we are running in the directory of the script
-        failed_when: not ansible_env.PWD.endswith('/mac-ansible')
+    - debug:
+        msg: Check we are running in the directory of the script
+      failed_when: not ansible_env.PWD.endswith('/mac-ansible')
 
 - hosts: localhost
   connection: local
-  vars_prompt:
-      - name: app_store_email
-        prompt: Apple ID
-        private: no
-        when: app_store_email is undefined
-      - name: app_store_password
-        prompt: Apple ID Password
-        private: yes
-        when: app_store_email is undefined
   roles:
-      - adamgold
+    - adamgold

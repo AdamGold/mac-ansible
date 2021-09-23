@@ -12,7 +12,11 @@ and re-install with less effort.
 
 ## What's left to do?
 
-1. Install VSCode Extensions:
+- Install Mac applications (list located in `roles/adamgold/files/vars/main.yml`)
+
+- Run :PluginInstall in Vim
+
+- Install VSCode Extensions:
 
 -   [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
 -   [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
@@ -22,9 +26,9 @@ and re-install with less effort.
 -   [Monokay Dark Soda Modified](https://marketplace.visualstudio.com/items?itemName=DengSir.monokai-dark-soda-modified)
 -   [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
 
-2. Set Alfred directory to the cloud storage
+- Set Alfred directory to the cloud storage
 
-3. Install Alfred Workflows:
+- Install Alfred Workflows:
 
 -   [Currency](https://github.com/jin5354/alfred3-workflow-CurrencyConvert)
 -   [fkill](https://github.com/SamVerschueren/alfred-fkill#readme)
@@ -33,7 +37,7 @@ and re-install with less effort.
 -   [New iTerm window](https://github.com/miromannino/alfred-new-terminal-window)
 -   [New Chrome window](https://github.com/caiogondim/alfred-chrome-window-workflow)
 
-4. Set `gitrepos` extension settings to (`alfred/workflow data/git-repos/settings.json`):
+- Set `gitrepos` extension settings to (`alfred/workflow data/git-repos/settings.json`):
 
 ```
 {

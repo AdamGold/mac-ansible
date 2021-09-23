@@ -4,13 +4,10 @@
 - name: Install things
   import_tasks: installs.yml
 
-- name: Install Mac App Store Apps
-  import_tasks: app_store.yml
-
 - name: Link in dotfiles
   import_tasks: dotfiles.yml
   tags:
-      - dotfiles
+    - dotfiles
 
 - name: Copy in/clone app settings
   import_tasks: app_settings.yml

@@ -12,10 +12,7 @@ homebrew_packages:
   - hadolint
   - libmodplug
   - libvorbis
-  - llvm@6
-  - llvm@8
   - node
-  - mas
   - pango
   - redis
   - tig
@@ -62,7 +59,7 @@ mac_store_apps:
 
 pyenv_python_versions:
   # In precedence order
-  - 3.8.3
+  - 3.9.7
   - 3.6.10
   - 2.7.17
 
@@ -106,6 +103,3 @@ dockitems_to_persist:
   - name: Visual Studio Code
     path: /Applications/Visual Studio Code.app
     pos: 3
-  - name: Spotify
-    path: /Applications/Spotify.app
-    pos: 4
