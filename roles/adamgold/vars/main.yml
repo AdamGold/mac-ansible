@@ -23,7 +23,6 @@ homebrew_packages:
   - zsh-completions
   - jq
   - kube-ps1
-  - pyenv-virtualenvwrapper
   - minikube
 
 homebrew_cask_appdir: /Applications

@@ -14,10 +14,13 @@ fi
 export PATH="$PATH:$HOME/.local/bin"
 export WORKON_HOME=$HOME/.venvs
 export PROJECT_HOME="$HOME/Documents/Development"
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export VIRTUALENVWRAPPER_PYTHON=$HOME/.local/pipx/venvs/virtualenvwrapper/bin/python
 export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/pipx/venvs/virtualenvwrapper/bin/virtualenv
 source $HOME/.local/pipx/venvs/virtualenvwrapper/bin/virtualenvwrapper.sh
+
+source_venv() {
+    source $HOME/.local/pipx/venvs/virtualenvwrapper/bin/virtualenvwrapper.sh
+}
 
 gtd() {
   cd ~/documents/development
@@ -31,3 +34,4 @@ kube() {
 }
 
 alias v=mkvirtualenv
+
