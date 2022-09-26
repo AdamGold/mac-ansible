@@ -1,5 +1,4 @@
 {
-	"workbench.colorTheme": "Monokai Dark Soda Modified",
 	"editor.fontFamily": "Fira Code, Monaco, 'Courier New', monospace",
 	"editor.cursorBlinking": "phase",
 	"python.linting.enabled": true,
@@ -36,11 +35,10 @@
 	"python.linting.mypyEnabled": true,
 	"editor.formatOnSave": true,
 	"python.formatting.provider": "black",
-	"terminal.integrated.fontFamily": "MesloLGS NF",
-	"python.venvPath": "~/.local/share/virtualenvs",
-	"python.pythonPath": "~/.pyenv/versions/3.8.2/bin/python3.8",
+	"terminal.integrated.fontFamily": "Menlo, Fira Code, Monaco, 'Courier New', monospace",
+	"python.venvPath": "~/.venvs",
 	"python.venvFolders": [
-		"~/.local/share/virtualenvs"
+		"~/.venvs"
 	],
 	"tabnine.experimentalAutoImports": true,
 	"python.formatting.blackPath": "~/.local/bin/black",
@@ -49,7 +47,6 @@
 	"files.insertFinalNewline": true,
 	"python.terminal.activateEnvironment": false,
 	"editor.suggestSelection": "first",
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"files.exclude": {
 		"**/.classpath": true,
 		"**/.project": true,
@@ -64,5 +61,8 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"terminal.integrated.scrollback": 3000,
-	"python.defaultInterpreterPath": "~/.pyenv/versions/3.8.2/bin/python3.8"
+	"python.defaultInterpreterPath": "~/.pyenv/versions/3.10.6/bin/python3.10",
+	"workbench.colorTheme": "Monokai Dark Soda Modified",
+	"workbench.iconTheme": "vscode-icons"
 }
+

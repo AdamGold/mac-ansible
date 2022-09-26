@@ -7,10 +7,12 @@ ControlPersist yes
 StrictHostKeyChecking no
 
 Host *
-  UseKeychain yes
+  AddKeysToAgent yes
+  ForwardAgent yes
 
 Host github.com
   Hostname ssh.github.com
+  IdentityFile ~/.ssh/github
   Port 443
 
 Host bitbucket.org
