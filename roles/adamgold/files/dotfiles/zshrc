@@ -10,6 +10,22 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+
+# Lines configured by zsh-newuser-install
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/adamgold/.zshrc'
+
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+# End of lines added by compinstall
+
+
 # Customize to your needs...
 export PATH="$PATH:$HOME/.local/bin"
 export WORKON_HOME=$HOME/.venvs
@@ -17,6 +33,7 @@ export PROJECT_HOME="$HOME/Documents/Development"
 export VIRTUALENVWRAPPER_PYTHON=$HOME/.local/pipx/venvs/virtualenvwrapper/bin/python
 export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/pipx/venvs/virtualenvwrapper/bin/virtualenv
 source $HOME/.local/pipx/venvs/virtualenvwrapper/bin/virtualenvwrapper.sh
+eval $(/opt/homebrew/bin/brew shellenv)
 
 source_venv() {
     source $HOME/.local/pipx/venvs/virtualenvwrapper/bin/virtualenvwrapper.sh
@@ -29,9 +46,23 @@ gtd() {
 
 kube() {
 	source <(kubectl completion zsh)
-	alias k=kubectl
-	complete -F __start_kubectl k
+	# complete -F __start_kubectl k
 }
 
 alias v=mkvirtualenv
+alias k=kubectl
 
+alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
+alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/adamgold/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/adamgold/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/adamgold/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/adamgold/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export KUBE_EDITOR="vim"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
